@@ -12,6 +12,8 @@ def run_sorting(arr):
     [insertionSort(arr=arr, key=arr[x], j=x-1) for x in range(1, len(arr))]
 
 
+data = []
+
 firt_input = int(sys.stdin.readline())
 
 data = [int(sys.stdin.readline()) + (i - i) for i in range(firt_input)]
