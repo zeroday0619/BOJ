@@ -1,0 +1,8 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "rust-project.json",
+    ],
+    "[rust]": {
+        "editor.semanticHighlighting.enabled": true
+    }
+}

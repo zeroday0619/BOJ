@@ -1,5 +1,5 @@
 import os
-
+import json
 
 def create_python_script(problem_number: int):
     file_path = f"{problem_number}.py"
@@ -41,7 +41,21 @@ def create_rust_script(problem_number: int):
             file.write(
                 "use std::io;\n\n" "fn main()\n" "{\n" "    // Your code here\n" "}\n"
             )
+        
+        crate = {
+            "root_module": file_path,
+            "edition": "2021",
+            "deps": []
+        }
+        with open("rust-project.json", "r") as rust_project:
+            rust_project_json: dict = json.load(rust_project)
+            crates: list = rust_project_json["crates"]
+            crates.append(crate)
+            with open("rust-project.json", "w") as rust_project:
+                json.dump(rust_project_json, rust_project, indent=4)
+            
         print(f"Rust script {file_path} has been created.")
+
     else:
         print(f"Rust script {file_path} already exists.")
 
