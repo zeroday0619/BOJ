@@ -49,7 +49,7 @@ def create_rust_script(problem_number: int):
 if __name__ == "__main__":
     try:
         problem_number = input("Enter the problem number: ")
-        selected_language = input("Choose a language (Python/C): ").lower()
+        selected_language = input("Choose a language (Python/C/Rust): ").lower()
 
         match selected_language:
             case "python":
